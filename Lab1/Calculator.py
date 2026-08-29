@@ -35,9 +35,16 @@ while True:
             continue
 
         print(f"Result: {result}")
-        break
+
+        again = input("Would you like to perform another calculation? (y/n): ").lower()
+        if again != 'y':
+            print("Goodbye!")
+            break
 
     except ValueError:
         print("Invalid input. Please enter numeric values.")
     except ZeroDivisionError:
         print("Error: Division by zero is not allowed.")
+    except EOFError:
+        print("\nInput ended. Exiting calculator.")
+        break
