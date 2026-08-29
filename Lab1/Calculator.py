@@ -16,24 +16,25 @@ def divide(a, b):
     return a / b
 
 
+# Map operations to functions
+operations = {
+    '+': add,
+    '-': subtract,
+    '*': multiply,
+    '/': divide
+}
+
 while True:
     try:
         num1 = float(input("Enter the first number: "))
         num2 = float(input("Enter the second number: "))
         operation = input("Choose an operation (+, -, *, /): ")
 
-        if operation == '+':
-            result = add(num1, num2)
-        elif operation == '-':
-            result = subtract(num1, num2)
-        elif operation == '*':
-            result = multiply(num1, num2)
-        elif operation == '/':
-            result = divide(num1, num2)
-        else:
+        if operation not in operations:
             print("Invalid operation. Please choose +, -, *, or /.")
             continue
 
+        result = operations[operation](num1, num2)
         print(f"Result: {result}")
 
         again = input("Would you like to perform another calculation? (y/n): ").lower()
