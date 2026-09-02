@@ -1,3 +1,5 @@
+#cowmoo
+#Date: 2026-09-02
 value_entered = input("enter a number between 1 and 100:")
 value_as_integer = int(value_entered)
 
