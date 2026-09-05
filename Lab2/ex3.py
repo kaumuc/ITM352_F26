@@ -1,8 +1,9 @@
-# Ask the user to enter a decimal number. Calculate the square root of that number and print it out
+# Ask for a decimal number, calculate its square, and print the result.
 # Name: Cowmoo
 # Date: Sept. 2, 2026
 
 input_value = input("Enter a floating point number: ")
+# Convert the input text to a number before performing arithmetic.
 float_value = float(input_value)
 squared_value = float_value ** 2
 
