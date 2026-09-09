@@ -1,3 +1,6 @@
+#install cryptography and check if it is imported successfully
+# khaumu
+# Date Sept. 9, 2026
 import cryptography
 
 
