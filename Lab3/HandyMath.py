@@ -17,3 +17,8 @@ def min(first_number, second_number):
 #this function takes a base and an exponent as input and returns the result of raising the base to the power of the exponent.
 def exponent(base, power):
     return base ** power
+
+
+#This function applies a two-number function and describes the result.
+def describe_function(x, y, function):
+    return f"The function {function.__name__} {x},{y} = {function(x, y)}"
