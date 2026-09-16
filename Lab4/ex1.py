@@ -5,4 +5,7 @@ last = input ("Enter your last name: ")
 full_name = first + " " + middle_intial + ". " + last
 print ("Your full name is: ", full_name)
 
-print(f"your full name is: {first} {middle_intial}. {last}")
+print(f"your full name using F-strings is: {first} {middle_intial}. {last}")
+print("your full name using percent formatting is: %s %s %s" % (first, middle_intial, last))
+print("your full name using .format() is: {} {}. {}".format(first, middle_intial, last))
+print("your full name using list joins is: " + " ".join([first, middle_intial + ".", last]))
