@@ -8,3 +8,6 @@ response_ids = (1012, 1035, 1021, 1053)
 response_values.append(response_ids)
 
 print("Combined response values and IDs:", response_values)
+
+response_values_new = [(1012, 5), (1035, 7), (1021, 3), (1053, 8)]
+print("Combined response values with IDs as tuples:", response_values_new)
