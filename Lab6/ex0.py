@@ -4,7 +4,6 @@ temperature = 80
 if temperature > 75:
 	print("It is warm outside.")
 
-
 print("\nExample 2: if/else statement")
 age = 18
 
