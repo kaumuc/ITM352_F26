@@ -1,7 +1,12 @@
 
 
-emotions = ( happy, sad, fear, surprise)
+# a
+emotions = ("happy", "sad", "fear", "surprise")
+print(str(emotions[-1] == "happy" and len(emotions) > 3).lower())
 
-is_it_true = emotions[3] == "happy" and len(emotions) > 3
-print(is_it_true)
-print(emotions[3] == "happy" and len(emotions) > 3)
+# b
+emotions = ("happy", "sad", "fear", "surprise")
+if emotions[-1] == "happy" and len(emotions) > 3:
+	print("true")
+else:
+	print("false")
