@@ -1,9 +1,7 @@
 
+odd_numbers = []
 
-for number in range(1, 51):
-    value = 2* number -1
+for number in range(25):
+    odd_numbers.append(2 * number + 1)
 
-    if value > 50:
-       break
-    else:
-        print(value)
+print(odd_numbers)
