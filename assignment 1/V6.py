@@ -12,6 +12,8 @@ questions = {
     "What is the capital of Germany?": ["Berlin", "Munich", "Hamburg", "Frankfurt"],
     "What is the airspeed of an unladen swallow?": ["10", "12", "8", "15"],
     "The Last Supper was painted by which artist?": ["da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+    "Which NFL player has the most ever touchdowns?": ["Jerry Rice", "Tom Brady", "Emmitt Smith", "Peyton Manning"],
+    "Who set the record for the fastest 100m sprint?": ["Usain Bolt", "Justin Gatlin", "Noah Lyles", "Yohan Blake"],
 }
 
 NUM_QUESTIONS_PER_QUIZ = 5
@@ -42,4 +44,4 @@ for num, (question, answers) in enumerate(selected_questions, start=1):
     else:
         print(f"The answer is {correct_answer!r}, not {answer!r}.")
 
-print(f"\nYou got {num_correct} out of {num_questions} correct.")
+print(f"\nYou got {num_correct} out of {len(selected_questions)} correct.")
