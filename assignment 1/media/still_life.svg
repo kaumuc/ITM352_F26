@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title description">
+  <title id="title">Original still-life fruit illustration</title>
+  <desc id="description">An apple, orange, and pear arranged on a blue table.</desc>
+  <rect width="640" height="400" fill="#f7e8c8"/>
+  <rect y="280" width="640" height="120" fill="#6a9c9b"/>
+  <ellipse cx="320" cy="310" rx="235" ry="34" fill="#477776"/>
+  <path d="M150 154c-33-24-78-7-83 39-6 52 27 103 70 104 23 0 31-14 47-14s24 14 47 14c43-1 76-52 70-104-5-46-50-63-83-39-17 12-21 12-34 12s-17 0-34-12z" fill="#d94b45"/>
+  <path d="M203 145c-3-27 9-42 25-54" fill="none" stroke="#64462f" stroke-width="10" stroke-linecap="round"/>
+  <path d="M218 110c23-21 45-14 51-8-12 21-31 28-51 8z" fill="#56844d"/>
+  <circle cx="320" cy="220" r="91" fill="#f49b32"/>
+  <path d="M319 130c-2-22 3-34 16-46" fill="none" stroke="#64462f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M329 97c20-16 38-11 45-6-11 18-27 24-45 6z" fill="#56844d"/>
+  <path d="M477 145c-8 35-17 45-28 71-19 44-10 81 33 81 45 0 53-37 34-81-11-26-20-36-28-71z" fill="#9aaf55"/>
+  <path d="M487 145c0-21 8-34 20-43" fill="none" stroke="#64462f" stroke-width="9" stroke-linecap="round"/>
+  <path d="M502 106c22-16 40-9 46-3-12 17-29 22-46 3z" fill="#56844d"/>
+  <path d="M0 0h640v400H0z" fill="none" stroke="#ffffff" stroke-width="12"/>
+</svg>

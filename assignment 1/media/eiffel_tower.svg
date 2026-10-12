@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title description">
+  <title id="title">Original illustration of the Eiffel Tower</title>
+  <desc id="description">A dark iron tower rises over a Paris skyline at sunset.</desc>
+  <rect width="480" height="360" rx="24" fill="#f6d6a8"/>
+  <circle cx="375" cy="76" r="38" fill="#e99b51"/>
+  <path d="M0 253h480v107H0z" fill="#dca77c"/>
+  <path d="M30 242h56v-55h63v55h44v-75h49v75h57v-62h58v62h94" fill="#bf8d72"/>
+  <path d="M100 291l65-41 75-185 75 185 65 41-24 10-75-40-41-105-41 105-75 40z" fill="#404c53"/>
+  <path d="M240 66v-30m-14 40h28m-47 93h66m-88 53h110m-142 33h174M165 250l49-84m101 84-49-84m-51-90 25 90m49 0 25-90m-143 143h120m-95-53h70m-50-53h30" fill="none" stroke="#27343a" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M130 300h220M208 302l32-69 32 69" fill="none" stroke="#27343a" stroke-width="8" stroke-linecap="round"/>
+  <path d="M58 205v-39m16 39v-49m300 49v-46m17 46v-55" stroke="#fff0d9" stroke-width="5"/>
+</svg>

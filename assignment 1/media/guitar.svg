@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title description">
+  <title id="title">Original illustration of an acoustic guitar</title>
+  <desc id="description">An acoustic guitar with a brown body, dark sound hole, neck, and tuning pegs.</desc>
+  <rect width="480" height="360" rx="24" fill="#f4ead5"/>
+  <path d="M219 144c-35-34-91-23-111 20-18 39-4 74 25 94-5 37 22 68 62 70 36 2 61-21 67-51 31-18 43-49 28-81-16-34-45-44-71-32z" fill="#bd713f" stroke="#754329" stroke-width="8"/>
+  <path d="M236 166l128-106 39 42-122 119z" fill="#c68a52" stroke="#754329" stroke-width="8"/>
+  <path d="M351 62l34-30 58 62-40 9z" fill="#855333" stroke="#593a29" stroke-width="7"/>
+  <circle cx="202" cy="225" r="30" fill="#573624"/>
+  <circle cx="202" cy="225" r="38" fill="none" stroke="#edc27e" stroke-width="5"/>
+  <rect x="230" y="179" width="139" height="17" transform="rotate(-41 230 179)" fill="#513d32"/>
+  <path d="M193 225L371 73M198 231L377 79M203 237L383 85M208 243L389 91M213 249L395 97M218 255L401 103" stroke="#f4e5c8" stroke-width="2"/>
+  <path d="M373 70l-13-16m21 11-13-16m25 25-13-16m21 11-13-16m-4 42 18 12m-7-22 18 12" stroke="#593a29" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="118" cy="108" r="36" fill="#e6b874"/>
+  <path d="M112 108h12m-6-6v12" stroke="#754329" stroke-width="5" stroke-linecap="round"/>
+</svg>
