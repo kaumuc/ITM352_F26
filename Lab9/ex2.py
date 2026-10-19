@@ -7,3 +7,4 @@ for price in prices:
     total_price = price * tax_rate
 
 print(f"Total price (with tax): ${total_price}")
+
