@@ -1,0 +1,29 @@
+{
+  "What is the capital of France?": ["Paris", "Toulouse", "Nice", "Avignon"],
+  "What is the capital of Germany?": ["Berlin", "Munich", "Hamburg", "Frankfurt"],
+  "What is the airspeed of an unladen swallow?": ["10", "12", "8", "15"],
+  "The Last Supper was painted by which artist?": ["da Vinci", "Michelangelo", "Raphael", "Caravaggio"],
+  "Which NFL player has the most ever touchdowns?": ["Jerry Rice", "Tom Brady", "Emmitt Smith", "Peyton Manning"],
+  "Who set the record for the fastest 100m sprint?": ["Usain Bolt", "Justin Gatlin", "Noah Lyles", "Yohan Blake"],
+  "Which fruit is in the center of the picture?": {
+    "answers": ["Orange", "Apple", "Pear", "Banana"],
+    "media": {
+      "type": "image",
+      "source": "media/still_life.svg"
+    }
+  },
+  "Which musical instrument is shown in the picture?": {
+    "answers": ["Guitar", "Violin", "Trumpet", "Flute"],
+    "media": {
+      "type": "image",
+      "source": "media/guitar.svg"
+    }
+  },
+  "Which landmark is shown in the picture?": {
+    "answers": ["Eiffel Tower", "Leaning Tower of Pisa", "Space Needle", "Big Ben"],
+    "media": {
+      "type": "image",
+      "source": "media/eiffel_tower.svg"
+    }
+  }
+}
