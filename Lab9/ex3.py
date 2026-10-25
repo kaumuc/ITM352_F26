@@ -1,34 +1,29 @@
-# Read the 1,000 lines of taxi data from taxi_1000.csv and calculate:
-# - the total of all fares
-# - the average of those fares
-# - the maximum trip distance based on the Trip Miles field
-
+# Read taxi_1000.csv and calculate the total of all fares, average fare,
+# and max trip distance.
 import csv
-import os
+from pathlib import Path
 
-csv_filename = os.path.join(os.path.dirname(__file__), "..", "taxi_1000.csv")
-total_fare = 0.0
-max_distance = 0.0
-trip_count = 0
+filename = Path(__file__).resolve().parents[1] / "taxi_1000.csv"
 
-with open(csv_filename, "r") as csv_file:
-    reader = csv.reader(csv_file)
-    headers = next(reader)
-    fare_index = headers.index("Fare")
-    miles_index = headers.index("Trip Miles")
+with open(filename, 'r', newline='') as file:
+    csv_reader = csv.DictReader(file)
 
-    for row in reader:
-        fare = float(row[fare_index])
-        distance = float(row[miles_index])
+    total_fare = 0.0
+    max_distance = 0.0
+    data_rows = 0
+
+    for row in csv_reader:
+        fare = float(row['Fare'])
+        distance = float(row['Trip Miles'])
+
         total_fare += fare
-        trip_count += 1
-
         if distance > max_distance:
             max_distance = distance
 
-average_fare = total_fare / trip_count
+        data_rows += 1
 
-print(f"Taxi trips read: {trip_count}")
-print(f"Total fares: ${total_fare:.2f}")
-print(f"Average fare: ${average_fare:.2f}")
-print(f"Maximum trip distance: {max_distance:g} miles")
+average_fare = total_fare / data_rows if data_rows > 0 else 0.0
+
+print(f"Total Fare: ${total_fare:.2f}")
+print(f"Average Fare: ${average_fare:.2f}")
+print(f"Max Trip Distance: {max_distance:.2f} miles")

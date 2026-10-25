@@ -1,10 +1,20 @@
 # Open names.txt and read its contents
-# Append a new name at the end of the file
+# Append your own name at the end of the file without losing existing names
+from pathlib import Path
 
-with open("names.txt", "r") as file_object:
+filename = Path(__file__).resolve().parent / "names.txt"
+new_name = "Clemente, Kaumualii"
+
+with open(filename, "r") as file_object:
     contents_list = file_object.readlines()
+    print("Before append:")
     print(contents_list)
 
-with open("names.txt", "a") as file_object:
-    print("Appending a new name to the file...")
-    file_object.write("Doe, John\n")
+if not any(name.strip() == new_name for name in contents_list):
+    with open(filename, "a") as file_object:
+        print(f"Appending {new_name} to the end of the file...")
+        file_object.write(new_name + "\n")
+
+with open(filename, "r") as file_object:
+    print("\nEntire file contents:")
+    print(file_object.read())
