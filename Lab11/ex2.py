@@ -1,18 +1,43 @@
-import pandas as pd
+
+
 import numpy as np
-import ssl
+import pandas as pd
 
-# Ignore SSL certificate errors
-ssl._create_default_https_context = ssl._create_unverified_context
 
-csv_file = "https://drive.google.com/file/d/1ujY0WCcePdotG2xdbLyeECFW9lCJ4t-K/view?usp=drive_link"
+SALES_DATA_URL = "https://drive.google.com/uc?id=1ujY0WCcePdotG2xdbLyeECFW9lCJ4t-K"
 
 try:
-    df = pd.read_csv(csv_file, engine='pyarrow', on_bad_lines='skip')
-    df['order_date'] = pd.to_datetime(df['order_date'], errors='coerce')
-    print(df.head())
+    sales_df = pd.read_csv(
+        SALES_DATA_URL,
+        engine="pyarrow",
+        dtype_backend="pyarrow",
+        on_bad_lines="skip",
+    )
+except (ImportError, OSError, ValueError) as error:
+    print(f"Unable to load sales_data.csv from Google Drive: {error}")
+    raise
 
-    
-    # Calculate the average order amount
-    avg_order_amount = df['order_amount'].mean()
-    print(f"Average Order Amount: {avg_order_amount}")
+for column in ("quantity", "unit_price"):
+    numeric_values = pd.to_numeric(sales_df[column], errors="coerce")
+    invalid_values = sales_df[column].notna() & numeric_values.isna()
+    if invalid_values.any():
+        print(
+            f"Warning: {invalid_values.sum()} non-numeric value(s) in "
+            f"{column} were converted to missing values."
+        )
+    sales_df[column] = numeric_values
+
+sales_df["sales"] = sales_df["quantity"] * sales_df["unit_price"]
+
+sales_pivot = pd.pivot_table(
+    sales_df,
+    values="sales",
+    index="sales_region",
+    columns="order_type",
+    aggfunc=lambda values: np.sum(values.dropna().to_numpy()),
+    margins=True,
+)
+
+pd.set_option("display.max_columns", None)
+print("Sales by region and order type:")
+print(sales_pivot)
