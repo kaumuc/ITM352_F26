@@ -1,4 +1,4 @@
-"""Show total and average sales by state and order type."""
+
 
 import numpy as np
 import pandas as pd
