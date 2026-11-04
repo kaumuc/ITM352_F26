@@ -1,10 +1,14 @@
+from pathlib import Path
+
 import pandas as pd
 
-file_id = "1Fv_vhoN4sTrUaozFPfzr0NCyHJLIeXEA"
-url = f"https://drive.google.com/uc?export=download&id={file_id}"
-sales_df = pd.read_csv(url)
-first_10_rows = sales_df.head(10)
-output_file = "sales_data_test.csv"
+csv_file = Path(__file__).with_name("sales_data_assn2.csv")
+outfile = Path(__file__).with_name("sales_data_test.csv")
 
-first_10_rows.to_csv(output_file, index=False)
-print(f"Saved the first 10 rows to {output_file}")
+try:
+    df = pd.read_csv(csv_file, engine="pyarrow", on_bad_lines="skip")
+    df.head(10).to_csv(outfile, index=False)
+    print(f"First 10 rows of {csv_file.name} saved to {outfile.name}")
+    print(df.head())
+except Exception as exc:
+    print(f"Error reading the CSV file: {exc}")
