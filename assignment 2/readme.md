@@ -1,4 +1,4 @@
-Sales Data Dashboard
+# Sales Data Dashboard
 Kaumualii Clemente
 
 I created a dashboard to load sales data and run predefined and
