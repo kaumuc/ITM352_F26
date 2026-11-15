@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quiz - Question {{ question_number }}</title>
+</head>
+<body>
+    <p>Question {{ question_number }} of {{ total_questions }}</p>
+    <h1>{{ question }}</h1>
+
+    {% if media %}
+        {% if media.type == "image" %}
+            <img src="{{ url_for('question_media', filename=media.source.split('/')[-1]) }}"
+                 alt="Quiz question">
+        {% elif media.type == "video" %}
+            <video controls>
+                <source src="{{ url_for('question_media', filename=media.source.split('/')[-1]) }}">
+            </video>
+        {% endif %}
+    {% endif %}
+
+    {% if error %}
+        <p role="alert">{{ error }}</p>
+    {% endif %}
+    <form action="{{ url_for('quiz') }}" method="post">
+        {% for answer in answers %}
+            <label>
+                <input type="radio" name="answer" value="{{ answer }}" required>
+                {{ answer }}
+            </label>
+            <br>
+        {% endfor %}
+        <button type="submit">Submit answer</button>
+    </form>
+</body>
+</html>

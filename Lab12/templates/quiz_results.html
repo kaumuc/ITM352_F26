@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quiz Results</title>
+</head>
+<body>
+    <h1>Quiz complete</h1>
+    <p>You got {{ result.num_correct }} out of {{ result.total_questions }} correct.</p>
+    <p>Bonus points: {{ result.bonus_points }}</p>
+    <p>Total score: {{ result.total_score }}</p>
+    {% if result.new_high_score %}
+        <p>New high score!</p>
+    {% endif %}
+    <form action="{{ url_for('start_quiz') }}" method="post">
+        <button type="submit">Play again</button>
+    </form>
+    <p><a href="{{ url_for('index') }}">Home</a></p>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Quiz Game</title>
+</head>
+<body>
+    <h1>Quiz Game</h1>
+    <p>Answer {{ num_questions }} randomly selected questions. Correct answers within
+        {{ fast_answer_seconds|int }} seconds earn a bonus point.</p>
+    <form action="{{ url_for('start_quiz') }}" method="post">
+        <button type="submit">Take the quiz</button>
+    </form>
+</body>
+</html>
