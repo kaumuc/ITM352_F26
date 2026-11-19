@@ -4,10 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Result</title>
+    {% if responsive %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endif %}
 </head>
 <body>
-    <h1>Quiz Result</h1>
-    <p>Your score: {{ score }} out of {{ max_questions }}</p>
-    <a href="{{ url_for('index') }}">Take Quiz Again</a>
+    <main class="card">
+        <h1>Quiz Result</h1>
+        <p class="score">Your score: {{ score }} out of {{ max_questions }}</p>
+        {% if error %}
+            <p class="error" role="alert">{{ error }}</p>
+        {% endif %}
+        {% if show_leaderboard %}
+            <form method="post" action="{{ url_for('submit_score') }}">
+                <label for="name">Name for the leaderboard:</label>
+                <input id="name" name="name" type="text" maxlength="40" required>
+                <button type="submit">Save Score</button>
+            </form>
+        {% endif %}
+        <nav class="page-links" aria-label="Quiz results">
+            {% if show_review %}
+                <a href="{{ url_for('review') }}">Review missed questions</a>
+            {% endif %}
+            {% if show_leaderboard %}
+                <a href="{{ url_for('leaderboard') }}">View leaderboard</a>
+            {% endif %}
+            <a href="{{ url_for('index') }}">Take Quiz Again</a>
+        </nav>
+    </main>
 </body>
 </html>

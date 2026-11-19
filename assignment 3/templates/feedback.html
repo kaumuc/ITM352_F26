@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Answer Feedback</title>
+    {% if responsive %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endif %}
+</head>
+<body>
+    <main class="card">
+        <h1>Question {{ progress_value }} of {{ total_questions }}</h1>
+        <progress
+            aria-label="Quiz progress"
+            value="{{ progress_value }}"
+            max="{{ total_questions }}"
+        >{{ progress_value }} of {{ total_questions }}</progress>
+        <h2>{{ question }}</h2>
+        {% if is_correct %}
+            <p class="feedback correct" role="status">Correct!</p>
+        {% else %}
+            <p class="feedback incorrect" role="status">
+                Not quite. The correct answer is {{ correct_answer }}.
+            </p>
+        {% endif %}
+        <p>{{ explanation }}</p>
+        <form method="post" action="{{ url_for('next_question') }}">
+            <button type="submit">Continue</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
+    {% if responsive %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endif %}
 </head>
 <body>
-
-    <title>Quiz</title>
-
-    <form method="POST">
-    
-        <h1>Question {{question_number+1}}: {{question}}</h1>
-        {% for option in options %}
-            <input type="radio" name="answer" value="{{option}}"> {{option}}<br>
-        {% endfor %}
-        <button type="submit">Submit Answer</button>
-    </form>
+    <main class="card">
+        <h1>Question {{ question_number }} of {{ total_questions }}</h1>
+        {% if show_progress %}
+            <progress
+                aria-label="Quiz progress"
+                value="{{ progress_value }}"
+                max="{{ total_questions }}"
+            >{{ progress_value }} of {{ total_questions }}</progress>
+        {% endif %}
+        <form method="post">
+            <fieldset>
+                <legend>{{ question }}</legend>
+                {% if media_filename %}
+                    <img
+                        class="question-image"
+                        src="{{ url_for('question_media', filename=media_filename) }}"
+                        alt="Image for the question: {{ question }}"
+                    >
+                {% endif %}
+                {% if error %}
+                    <p class="error" role="alert">{{ error }}</p>
+                {% endif %}
+                {% for option in options %}
+                    <label class="answer-option">
+                        <input type="radio" name="answer" value="{{ option }}">
+                        <span>{{ option }}</span>
+                    </label>
+                {% endfor %}
+            </fieldset>
+            <button type="submit">Submit Answer</button>
+        </form>
+    </main>
 </body>
 </html>

@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to the Quiz</title>
+    {% if responsive %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endif %}
 </head>
 <body>
-    <h1>Welcome to the Quiz</h1>
-    <a href="{{ url_for('quiz') }}">Start Quiz</a>
+    <main class="card">
+        <h1>Welcome to the Quiz</h1>
+        <p>Answer five randomized questions from the Assignment 1 quiz.</p>
+        <form method="post" action="{{ url_for('start_quiz') }}">
+            <button type="submit">Start Quiz</button>
+        </form>
+        {% if show_leaderboard %}
+            <a href="{{ url_for('leaderboard') }}">View leaderboard</a>
+        {% endif %}
+    </main>
 </body>
 </html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Missed Questions</title>
+    {% if responsive %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    {% endif %}
+</head>
+<body>
+    <main class="card">
+        <h1>Review Missed Questions</h1>
+        {% if missed_questions %}
+            {% for answer in missed_questions %}
+                <section class="review-item">
+                    <h2>{{ answer.question }}</h2>
+                    <p>Your answer: {{ answer.chosen_answer }}</p>
+                    <p>Correct answer: {{ answer.correct_answer }}</p>
+                    <p>{{ answer.explanation }}</p>
+                </section>
+            {% endfor %}
+        {% else %}
+            <p>You did not miss any questions.</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}">Take Quiz Again</a>
+    </main>
+</body>
+</html>
