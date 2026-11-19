@@ -21,5 +21,5 @@ open while playing. Run `python3 -m unittest -v` to run the tests.
 I used AI for help when I came across parts I did not understand. Some of the
 harder parts were keeping quiz answers in a Flask session, returning JSON from
 REST API routes, sorting and saving the top-ten scores, and making the pages
-responsive. I asked AI to explain these ideas and walk me through what the code
-was doing. I worked through the assignment in stages and tested it as I went.
+responsive. I asked AI to explain these things and walk me through what the code
+was doing. I worked through the assignment in stages and tested it as I went to make sure I didnt need to test the whole thing and try to find the little problem in the code. Working in parts always helps to keep me organized.
