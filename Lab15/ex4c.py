@@ -13,7 +13,7 @@ client = OpenAI(
 
 MODEL = "openrouter/free"
 
-DEFAULT_SYSTEM_CONTEXT = "You are a helpful assistant for Aloha Bikes."
+DEFAULT_SYSTEM_CONTEXT = "You are a helpful assistant."
 system_context = input(
     "Enter system context, or leave blank for the default: "
 ).strip()
